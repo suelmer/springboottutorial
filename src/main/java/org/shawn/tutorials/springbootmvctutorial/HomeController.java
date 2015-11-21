@@ -2,6 +2,7 @@ package org.shawn.tutorials.springbootmvctutorial;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by Shawn on 15/11/21.
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/home")
+    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
     public String getHomeView() {
-        return "/WEB-INF/views/home.jsp";
+        return "home";
     }
 }
