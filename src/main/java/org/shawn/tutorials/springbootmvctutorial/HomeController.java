@@ -11,9 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/myLogin")
+    public String getMyLoginView() {
+        return "mylogin";
+    }
+
+    @RequestMapping(value = "/home")
     public String getHomeView() {
         return "home";
     }
-
 }

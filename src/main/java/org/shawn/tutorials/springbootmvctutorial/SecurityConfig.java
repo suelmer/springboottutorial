@@ -21,9 +21,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().authenticated().and().
-                formLogin().loginPage("/login.jsp").failureUrl("/login.jsp?error").loginProcessingUrl("/login").
+                formLogin().loginPage("/myLogin").failureUrl("/myLogin?error").loginProcessingUrl("/login").
                 defaultSuccessUrl("/home").usernameParameter("username").passwordParameter("password").
-                permitAll().and().logout().logoutUrl("/logout").logoutSuccessUrl("/login.jsp?loggedOut").
+                permitAll().and().logout().logoutUrl("/logout").logoutSuccessUrl("/myLogin?loggedOut").
                 permitAll().and().csrf().disable();
     }
 }
