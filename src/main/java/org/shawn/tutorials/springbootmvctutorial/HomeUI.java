@@ -6,11 +6,8 @@ import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContext;
-
 import java.security.Principal;
 
 
@@ -18,6 +15,7 @@ import java.security.Principal;
  * Created by Shawn on 15/11/22.
  */
 
+@SuppressWarnings("serial")
 @SpringUI
 public class HomeUI extends UI {
 
