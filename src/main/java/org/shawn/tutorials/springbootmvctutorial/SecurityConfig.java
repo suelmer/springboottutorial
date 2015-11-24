@@ -16,6 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/js/**");
         web.ignoring().antMatchers("/VAADIN/**");
+        web.ignoring().antMatchers("/vaadinServlet/UIDL/**");
         web.ignoring().antMatchers("/vaadinlogin/**");
     }
 

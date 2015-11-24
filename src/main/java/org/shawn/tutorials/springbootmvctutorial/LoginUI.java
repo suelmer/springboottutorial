@@ -1,5 +1,6 @@
 package org.shawn.tutorials.springbootmvctutorial;
 
+import com.vaadin.annotations.Theme;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.shared.ui.label.ContentMode;
 import com.vaadin.spring.annotation.SpringUI;
@@ -10,6 +11,7 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 @SpringUI(path = "/vaadinlogin")
+@Theme("valo")
 public class LoginUI extends UI {
 
 	@Override
