@@ -15,14 +15,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/js/**");
+        web.ignoring().antMatchers("/VAADIN/**");
+        web.ignoring().antMatchers("/vaadinlogin/**");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().authenticated().and().
-                formLogin().loginPage("/myLogin").failureUrl("/myLogin?error").loginProcessingUrl("/login").
+                formLogin().loginPage("/vaadinlogin").failureUrl("/vaadinlogin?error").loginProcessingUrl("/login").
                 defaultSuccessUrl("/home").usernameParameter("username").passwordParameter("password").
-                permitAll().and().logout().logoutUrl("/logout").logoutSuccessUrl("/myLogin?loggedOut").
+                permitAll().and().logout().logoutUrl("/logout").logoutSuccessUrl("/vaadinlogin?loggedOut").
                 permitAll().and().csrf().disable();
     }
 }
